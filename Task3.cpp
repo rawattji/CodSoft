@@ -48,9 +48,9 @@ void GetStudentsDetails(vector<pair<string, double>>& students){
 
 
 void calculate_grades(const vector<pair<string,double>>&students, double& averageGrade, 
-double& highestGrade,string& highestName, double& lowestGrade , string& lowestName ){
-    if (students.empty()) {
-        cout << "Please Enter Students Data First" << endl;
+double& highestGrade,string& highestName, double& lowestGrade , string& lowestName){
+    if (students.empty()){
+        cout <<"Please Enter Students Data First" <<endl;
         return;
     }
     double totalGrade = 0;
@@ -59,19 +59,19 @@ double& highestGrade,string& highestName, double& lowestGrade , string& lowestNa
     highestName = students[0].first; 
     lowestName = students[0].first;
 
-    for (const pair<string, double>& student : students) {
+    for (const pair<string, double>& student : students){
         totalGrade += student.second;
-        if (student.second > highestGrade) {
+        if (student.second > highestGrade){
             highestGrade = student.second;
             highestName = student.first;
         }
-        if (student.second < lowestGrade) {
+        if (student.second < lowestGrade){
             lowestGrade = student.second;
             lowestName = student.first;
         }
     }
 
-    averageGrade = totalGrade / students.size();
+    averageGrade =totalGrade/students.size();
 }
 
 
@@ -90,13 +90,13 @@ int main(){
     GetStudentsDetails(students);
     calculate_grades(students, averageGrade, highestGrade, highestName, lowestGrade, lowestName);
    clearConsole();
-    cout << "Average grade: " << averageGrade << endl;
-    cout << "Highest grade: " << highestGrade << " of Student Name: "<<highestName<< endl;
-    cout << "Lowest grade: " << lowestGrade << " of Student Name: "<<lowestName<< endl;
+    cout<<"Average grade: "<<averageGrade<<endl;
+    cout<<"Highest grade: "<<highestGrade<<" of Student Name: "<<highestName<<endl;
+    cout<<"Lowest grade: "<<lowestGrade<<" of Student Name: "<<lowestName<<endl;
 
-    cout << "---------------------------------" << endl;
-    cout << "Thank you for Using Our Grading System" << endl;
-    cout << "---------------------------------" << endl;
+    cout<<"---------------------------------"<<endl;
+    cout<<"Thank you for Using Our Grading System"<<endl;
+    cout<<"---------------------------------"<<endl;
 
     cin.ignore();
 
